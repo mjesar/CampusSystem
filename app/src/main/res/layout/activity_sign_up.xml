@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mj.campussystem.Authentication.SignUp">
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="name" />
+
+    <EditText
+        android:hint="Email"
+        android:id="@+id/et_email1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/et_name"
+        android:layout_alignRight="@+id/et_name"
+        android:layout_below="@+id/et_name"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:hint="Password"
+        android:id="@+id/et_password1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/et_email1"
+        android:layout_alignStart="@+id/et_email1"
+        android:layout_below="@+id/et_email1"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/bt_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_register"
+        android:layout_centerHorizontal="true"
+        android:onClick="RegisterUser"
+        android:text="SignUp" />
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="144dp"
+        android:onClick="Gotologin"
+        android:text="Sign in "
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_password1"
+
+        >
+
+        <RadioButton
+            android:id="@+id/studentRB"
+            android:onClick="onRadioButtonClicked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:text="Student" />
+
+    <RadioButton
+        android:onClick="onRadioButtonClicked"
+        android:id="@+id/companyRb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioButton"
+        android:layout_centerHorizontal="true"
+        android:text="Company" />
+    </RadioGroup>
+
+</RelativeLayout>
