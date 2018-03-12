@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 import com.example.mj.campussystem.Authentication.Users;
 import com.example.mj.campussystem.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -26,8 +23,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         public TextView item_name;
         public ImageView item_delete;
         private List<Users> studentsList;
-        private FirebaseAuth myAuth;
-        private DatabaseReference databaseReference;
+
         Context context;
 //    private OnRecyclerItemClickListener onRecyclerItemClickListener;
         String taskTitle;
@@ -35,7 +31,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public RecyclerViewHolder(final View itemView, final List<Users> studentsList) {
             super(itemView);
-            String taskTitle;
             this.studentsList = studentsList;
             context = itemView.getContext();
 
@@ -44,8 +39,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
 
 
-            databaseReference = FirebaseDatabase.getInstance().getReference("Tasks");
-            myAuth = FirebaseAuth.getInstance();
+
 
 
         }

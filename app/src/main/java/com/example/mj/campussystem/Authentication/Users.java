@@ -5,15 +5,24 @@ package com.example.mj.campussystem.Authentication;
  */
 
 public class Users {
+
+
     String name;
     String email;
     String user_id;
 
-
     String nameJob;
     String experience;
 
+
+    String job;
+
     String catogety;
+
+    public Users(){
+
+    }
+
     public Users(String name, String email, String user_id,String catogery) {
         this.name = name;
         this.email= email;
@@ -23,13 +32,12 @@ public class Users {
 
     }
 
-    public Users(){
 
-    }
 
-    public Users(String nameJob, String experience) {
-    this.nameJob=nameJob;
-    this.experience= experience;
+    public Users(String name, String user_id,String catogety) {
+    this.name=name;
+    this.user_id= user_id;
+    this.catogety= catogety;
 
     }
 
@@ -57,14 +65,6 @@ public class Users {
     public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
-    public String getCatogety() {
-        return catogety;
-    }
-
-    public void setCatogety(String catogety) {
-        this.catogety = catogety;
-    }
-
 
     public String getNameJob() {
         return nameJob;
@@ -80,6 +80,23 @@ public class Users {
 
     public void setExperience(String experience) {
         this.experience = experience;
+    }
+
+    public String getCatogety() {
+        return catogety;
+    }
+
+    public void setCatogety(String catogety) {
+        this.catogety = catogety;
+    }
+
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
     }
 
 }

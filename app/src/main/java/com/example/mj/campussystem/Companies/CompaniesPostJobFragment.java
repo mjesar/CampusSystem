@@ -71,7 +71,7 @@ public class CompaniesPostJobFragment extends Fragment {
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
                 LayoutInflater inflater = LayoutInflater.from(getActivity());
                 final View dialogView = inflater.inflate(R.layout.dialog, null);
-                alertDialog.setTitle("Add new Record");
+                alertDialog.setTitle("Add new Job");
                 alertDialog.setView(dialogView);
 
 
@@ -86,31 +86,31 @@ public class CompaniesPostJobFragment extends Fragment {
 
 
                        EditText et_sname = (EditText) dialogView.findViewById(R.id.et_job_name);
-                        EditText et_experience = (EditText) dialogView.findViewById(R.id.et_experience);
 
 
                         String nameJob = et_sname.getText().toString();
-                        String experince = et_experience.getText().toString();
                         String job= "job";
-                        if (TextUtils.isEmpty(nameJob) && (TextUtils.isEmpty(experince) )) {
+                        if (TextUtils.isEmpty(nameJob)) {
                             Toast.makeText(getActivity(), "Provide Complete Info", Toast.LENGTH_SHORT).show();
+                        }else {
+
+
+                            Users users = new Users(nameJob, user_id, job);
+                            databaseReference.child(push_id).setValue(users);
+
                         }
-
-
-                        Users users= new Users(nameJob, experince, user_id,job);
-                        Log.d(TAG, "onClick:sss" + users.getUser_id().toString());
-                        databaseReference.child(push_id).setValue(users);
-
-
                     }
 
                 });
-                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
+
+                    {
+                        @Override
+                        public void onClick (DialogInterface dialog,int which){
 
 
                     }
+
                 });
 
 
@@ -142,7 +142,7 @@ public class CompaniesPostJobFragment extends Fragment {
 
                // users.setUser_id(dataSnapshot.getKey());
                 if (users.getCatogety().equals("job")&& users.getUser_id().equals(user_id)){
-                    Log.d(TAG, "onChildAddedwqwqw: "+users.getUser_id());
+                    Log.d(TAG, "onChildAddedwqwqw: "+users.getNameJob());
                     usersArrayList.add(users);
                     recordAdapter.notifyDataSetChanged();
                 }

@@ -13,13 +13,6 @@
         android:inputType="textPersonName"
         android:hint="Job" />
 
-    <EditText
-        android:id="@+id/et_experience"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Experience"/>
 
 
 </LinearLayout>

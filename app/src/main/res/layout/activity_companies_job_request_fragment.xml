@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mj.campussystem.Companies.CompaniesJobRequestFragment">
-    <TextView
-        android:id="@+id/textView3"
-        android:textSize="30sp"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Job Requests" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_students"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="12dp"
+        android:orientation="vertical"
+        android:scrollbars="none"/>
 </android.support.constraint.ConstraintLayout>
