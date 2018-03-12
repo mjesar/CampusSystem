@@ -21,8 +21,8 @@
         android:id="@+id/item_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/ic_delete"
         android:layout_marginRight="20dp"
+        android:background="@android:drawable/ic_menu_delete"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
 

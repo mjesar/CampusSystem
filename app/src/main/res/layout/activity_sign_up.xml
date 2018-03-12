@@ -45,7 +45,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/tv_register"
+        android:layout_alignLeft="@+id/tv_register"
         android:layout_centerHorizontal="true"
+
+        android:layout_alignStart="@+id/tv_register"
+        android:layout_marginBottom="5dp"
         android:onClick="RegisterUser"
         android:text="SignUp" />
 
@@ -55,9 +59,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="144dp"
+        android:layout_marginBottom="240dp"
         android:onClick="Gotologin"
         android:text="Sign in "
+
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp" />
     <RadioGroup

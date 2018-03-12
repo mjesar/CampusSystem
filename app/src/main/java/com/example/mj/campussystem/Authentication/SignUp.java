@@ -12,9 +12,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.example.mj.campussystem.Companies.Companies;
 import com.example.mj.campussystem.R;
-import com.example.mj.campussystem.admin.AdminCompaniesFragment;
-import com.example.mj.campussystem.admin.AdminStudentFragment;
+import com.example.mj.campussystem.Students.Students;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -100,13 +100,13 @@ public class SignUp extends AppCompatActivity {
 
         if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
 
+            progressDialog.show();
 
 
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
-                    progressDialog.show();
                     if (task.isSuccessful()) {
 
                         String user_id = mAuth.getCurrentUser().getUid();
@@ -115,19 +115,16 @@ public class SignUp extends AppCompatActivity {
                         Log.d(TAG, "onComplete: "+users.getCatogety().toString());
 
                         if (users.getCatogety().toString()=="student"){
-                            Intent intent = new Intent(SignUp.this, AdminStudentFragment.class);
+                            Intent intent = new Intent(SignUp.this, Students.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
-                            Toast.makeText(SignUp.this, "time to goto Student", Toast.LENGTH_SHORT).show();
                         }else if (users.getCatogety().toString()=="company"){
-                            Toast.makeText(SignUp.this, "time to goto Company", Toast.LENGTH_SHORT).show();
 
-                            Intent intent1 = new Intent(SignUp.this, AdminCompaniesFragment.class);
+                            Intent intent1 = new Intent(SignUp.this, Companies.class);
                             intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent1);
 
                         }
-                            progressDialog.dismiss();
 
 
                     } else {
@@ -144,6 +141,7 @@ public class SignUp extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Please fill all fields ", Toast.LENGTH_SHORT).show();
         }
+        progressDialog.dismiss();
 
     }
     @Override

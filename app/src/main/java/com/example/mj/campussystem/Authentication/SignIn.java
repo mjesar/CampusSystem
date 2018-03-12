@@ -72,7 +72,6 @@ public class SignIn extends AppCompatActivity {
 
             if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
 
-                progressDialog.show();
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -146,6 +145,9 @@ public class SignIn extends AppCompatActivity {
                         Intent intent2 = new Intent(SignIn.this, Admin.class);
                         intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent2);
+                    }else if (user_id.equals(null)){
+                        Toast.makeText(SignIn.this, "You have no account go and register :P ", Toast.LENGTH_SHORT).show();
+
                     }
 
                 }
